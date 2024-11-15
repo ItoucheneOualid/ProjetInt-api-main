@@ -1,0 +1,146 @@
+### Création de Catégories
+POST http://localhost:8080/api/categories/init
+Content-Type: application/json
+
+
+### Récupération de toutes les catégories
+GET http://localhost:8080/api/categories
+Accept: application/json
+
+### Récupération de toutes les catégories version DTO
+GET http://localhost:8080/api/categories/dtos
+Accept: application/json
+
+
+### Récupération d'une catégorie par son ID
+GET http://localhost:8080/api/categories/1
+Accept: application/json
+
+
+### Récupération des noms de catégories avec le nombre de produits
+GET http://localhost:8080/api/categories/names-with-counts
+Accept: application/json
+
+
+### Création d'une nouvelle catégorie (exemple)
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "Accessoires"
+}
+
+
+### Mise à jour d'une catégorie par ID
+PUT http://localhost:8080/api/categories/1
+Content-Type: application/json
+
+{
+  "name": "Mode Homme"
+}
+
+
+### Suppression d'une catégorie par ID
+DELETE http://localhost:8080/api/categories/1
+
+
+### Création d'une Marque
+POST http://localhost:8080/api/brands
+Content-Type: application/json
+
+{
+  "name": "Nike"
+}
+
+
+### Récupération de toutes les marques
+GET http://localhost:8080/api/brands
+Accept: application/json
+
+
+### Récupération d'une marque par son ID
+GET http://localhost:8080/api/brands/1
+Accept: application/json
+
+
+### Mise à jour d'une marque par ID
+PUT http://localhost:8080/api/brands/1
+Content-Type: application/json
+
+{
+  "name": "Adidas"
+}
+
+
+### Suppression d'une marque par ID
+DELETE http://localhost:8080/api/brands/1
+
+
+### Création d'un Produit
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "productName": "T-shirt Sport",
+  "productDescription": "Un T-shirt confortable pour le sport",
+  "unitPrice": 19.99,
+  "quantityInStock": 50,
+  "color": "Rouge",
+  "category": {
+    "id": 1
+  },
+  "brand": {
+    "id": 1
+  },
+  "size": "M"
+}
+
+
+### Récupération de tous les produits
+GET http://localhost:8080/api/products
+Accept: application/json
+
+
+### Récupération d'un produit par ID
+GET http://localhost:8080/api/products/1
+Accept: application/json
+
+
+### Récupération de tous les détails d'un produit par son ID
+GET http://localhost:8080/api/products/1/details
+Accept: application/json
+
+
+### Mise à jour d'un produit par ID
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+  "productName": "T-shirt Fitness",
+  "productDescription": "Parfait pour l'entraînement",
+  "unitPrice": 22.99,
+  "quantityInStock": 30,
+  "color": "Bleu",
+  "category": {
+    "id": 2
+  },
+  "brand": {
+    "id": 2
+  },
+  "size": "L"
+}
+
+
+### Suppression d'un produit par ID
+DELETE http://localhost:8080/api/products/1
+
+
+### Récupération de l'image d'un produit par son ID
+GET http://localhost:8080/api/products/image/1
+Accept: image/jpeg
+
+
+### Récupération de tout les produits d'une certaine catégorie
+GET http://localhost:8080/api/products/catagory/dc7b75ab-8046-4beb-93f9-f44d5c2731db
+
+Accept: application/json
